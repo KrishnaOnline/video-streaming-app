@@ -16,7 +16,7 @@ const VideoPage = () => {
   // console.log(videoID);
   // console.log(VIDEO_BY_ID_URL+`&id=${videoID}`);
 
-  const [readMore, setReadMore] = useState(true);
+  const [readMore, setReadMore] = useState(false);
 
   function toggleReadMore() {
     setReadMore(!readMore)
@@ -36,27 +36,31 @@ const VideoPage = () => {
   }
 
   return (
-    <div className='m-6 ml-16 w-[930px]'>
-      <iframe 
-        width="930" 
-        height="523" 
-        src={"https://www.youtube.com/embed/"+videoID} 
-        allowFullScreen>
-      </iframe>
-      <p className='font-bold text-xl mt-3'>{title}</p>
-      <p className='mt-3 font-semibold'>{channelTitle}</p>
-      <div className=''>
-        <pre className='mt-3'>
-          {
-            readMore ? desc : `${desc.substring(0, 200)}...`
-          }
-          </pre>
-          <button className='font-medium' onClick={() => toggleReadMore()}>
-          {
-            readMore ? 'Read Less' : 'Read More'
-          }
-        </button>
+    <div className='flex'>
+      <div className='m-6 ml-16 w-[930px]'>
+        <iframe 
+          width="930" 
+          height="523" 
+          src={"https://www.youtube.com/embed/"+videoID} 
+          allowFullScreen>
+        </iframe>
+        <p className='font-bold text-xl mt-3'>{title}</p>
+        <p className='mt-3 font-semibold'>{channelTitle}</p>
+        <div className='w-[930px]'>
+          <p className='bg-gray-200 rounded-lg p-5 mt-7 w-[930px]'>
+            {
+              readMore ? desc : `${desc?.substring(0, 200)}...`
+            }
+            <button className='font-medium' onClick={() => toggleReadMore()}>
+              {
+                readMore ? ` Read Less` : ` Read More`
+              }
+            </button>
+          </p>
+            
+        </div>
       </div>
+      <div></div>
     </div>
   )
 }
