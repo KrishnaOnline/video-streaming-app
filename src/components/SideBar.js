@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 const SideBar = () => {
   const isOpen = useSelector(store => store.menu.isOpen);
@@ -8,7 +9,7 @@ const SideBar = () => {
 
   return (
     <div className='flex flex-col gap-2 py-8 pl-20 mr-10'>
-      <p className='font-medium'>Home</p>
+      <Link to="/"><p className='font-medium'>Home</p></Link>
       <p className='font-medium'>Shorts</p>
       <p className='font-medium'>Subscriptions</p>
       <hr className='my-5'/>
