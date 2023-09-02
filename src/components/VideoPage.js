@@ -57,7 +57,6 @@ const VideoPage = () => {
               }
             </button>
           </p>
-            
         </div>
       </div>
       <div></div>
