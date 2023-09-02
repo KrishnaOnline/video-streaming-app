@@ -15,7 +15,7 @@ const Header = () => {
         <img alt="menu" className='h-4 cursor-pointer' src={require('../assets/images/three-horizontal-lines.png')}
           onClick={() => handleSideBar()}
         />
-        <img alt='logo' className='h-7' src={require('../assets/images/youtube-logo.png')}/>
+        <a href='/'><img alt='logo' className='h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
       </div>
       <div className='col-span-8'>
         <input className='w-1/2 p-2 border border-black border-opacity-40 rounded-l-full border-r-0' type='text' placeholder='Search'/>
