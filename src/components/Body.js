@@ -3,12 +3,14 @@ import ButtonList from './ButtonList';
 import VideoContainer from './VideoContainer';
 import MainContainer from './MainContainer';
 import SideBar from './SideBar';
+import VideoPage from './VideoPage'
+import { Outlet } from 'react-router-dom';
 
 const Body = () => {
   return (
-    <div className='m-6 mx-7'>
-      <ButtonList/>
-      <VideoContainer/>
+    <div className='flex'>
+      <SideBar/>
+      <Outlet/>
     </div>
   )
 }
