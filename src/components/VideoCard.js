@@ -1,10 +1,30 @@
 import React, { useState } from 'react';
 import { YOUTUBE_VIDEO_URL } from '../utils/constants';
 
-const VideoCard = () => {
-  return (
-    <div>
+const VideoCard = ({video}) => {
 
+  console.log(video);
+  const {snippet, statistics} = video;
+  const {channelTitle, title, thumbnails} = snippet;
+  const {viewCount, likeCount} = statistics;
+  const views = Number(viewCount);
+
+  function formatYouTubeViews(views) {
+    if (views >= 1000000) {
+      return (views / 1000000).toFixed(2) + 'M';
+    } else if (views >= 1000) {
+      return (views / 1000).toFixed(2) + 'K';
+    } else {
+      return views.toString();
+    }
+  }
+
+  return (
+    <div className='p-2 m-2 w-[17rem] shadow-lg rounded-lg border border-gray-300'>
+      <img className='' src={thumbnails.medium.url}/>
+      <p className='font-semibold'>{title.substring(0, 55)+"..."}</p>
+      <p className='pt-2'>{channelTitle}</p>
+      <p className='pt-2'>{formatYouTubeViews(views)} views</p>
     </div>
   )
 }

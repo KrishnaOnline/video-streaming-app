@@ -7,7 +7,7 @@ const SideBar = () => {
   if(!isOpen) return null;
 
   return (
-    <div className='flex flex-col gap-2 px-12 py-8 w-60 shadow-md'>
+    <div className='flex flex-col gap-2 py-8 pl-20 mr-10'>
       <p className='font-medium'>Home</p>
       <p className='font-medium'>Shorts</p>
       <p className='font-medium'>Subscriptions</p>

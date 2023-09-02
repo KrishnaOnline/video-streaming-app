@@ -2,13 +2,13 @@ import React from 'react';
 import Button from './Button';
 
 const ButtonList = () => {
-  const btnList = ["All", "JavaScript", "Music", "MERN", "Development", "DS & Algo", "Ram Charan", "Cricket", "Foot Ball"];
+  const btnList = ["All", "JavaScript", "MERN", "Development", "DS&Algo", "RamCharan", "Music", "Cricket", "FootBall", "Telugu"];
 
   return (
-    <div className='flex gap-5 mb-9 flex-wrap'>
+    <div className='flex gap-5 pl-6 mb-5'>
         {
-          btnList.map(btn => (
-            <Button name={btn}/>
+          btnList.map((btn, index) => (
+            <Button name={btn} key={index}/>
           ))
         }
     </div>
