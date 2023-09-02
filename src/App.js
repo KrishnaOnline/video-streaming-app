@@ -4,12 +4,23 @@ import Header from './components/Header';
 import MainContainer from './components/MainContainer';
 import SideBar from './components/SideBar';
 import store from './store/store';
-import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Body from './components/Body';
+import VideoPage from './components/VideoPage';
 
 const appRouter = createBrowserRouter([{
   path: "/",
-  element: <Body/>
+  element: <Body/>,
+  children: [
+    {
+      path: "/",
+      element: <MainContainer/>,
+    },
+    {
+      path: "/watch",
+      element: <VideoPage/>
+    }
+  ],
 }]);
 
 function App() {
@@ -17,7 +28,7 @@ function App() {
     <Provider store={store}>
       <div className="App">
         <Header/>
-        <MainContainer/>
+        <RouterProvider router={appRouter}/>
       </div>
     </Provider>
   );
