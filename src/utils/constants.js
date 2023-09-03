@@ -4,4 +4,6 @@ export const YOUTUBE_VIDEO_URL = "https://youtube.googleapis.com/youtube/v3/vide
 
 export const VIDEO_BY_ID_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=`+YOUTUBE_API_KEY;
 
-export const YOUTUBE_SEARCH_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+export const VIDEO_SEARCH_API = "https://youtube.googleapis.com/youtube/v3/search?key="+YOUTUBE_API_KEY;
+
+export const YOUTUBE_SEARCH_API = "https://corsproxy.io/?http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
