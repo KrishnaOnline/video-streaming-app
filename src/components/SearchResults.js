@@ -26,7 +26,7 @@ const SearchResults = () => {
       {
         searchResults.map((video) => {
           return (
-            <Link to={"/watch/"+video?.id?.videoId}>
+            <Link to={"/watch/"+params}>
               <SearchCard key={video?.id?.videoId} searchResults={video}/>
             </Link>
           )

@@ -11,7 +11,7 @@ import SearchResults from './components/SearchResults';
 
 const appRouter = createBrowserRouter([{
   path: "/",
-  element: <Body/>,
+  element: <><Header/><Body/></>,
   children: [
     {
       path: "/",
@@ -32,7 +32,6 @@ function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Header/>
         <RouterProvider router={appRouter}/>
       </div>
     </Provider>
