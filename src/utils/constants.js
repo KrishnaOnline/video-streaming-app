@@ -8,4 +8,6 @@ export const SEARCH_RESULTS_API = `https://youtube.googleapis.com/youtube/v3/sea
 
 export const YOUTUBE_SEARCH_API = "https://corsproxy.io/?http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
+export const YOUTUBE_COMMENTS_API = `https://youtube.googleapis.com/youtube/v3/commentThreads?part=snippet%2Creplies&key=${YOUTUBE_API_KEY}&videoId=`
+
 export const LIVE_CHAT_COUNT = 150;
