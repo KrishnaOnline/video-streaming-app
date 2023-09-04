@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleMenu } from '../utils/menuSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
+import { Link, useParams } from 'react-router-dom';
+import SearchResults from './SearchResults';
 
 const Header = () => {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState([]);
+
+  const params = useParams();
 
   useEffect(() => {
     const timer = setTimeout(() => getSearchResults(), 100);
@@ -15,6 +19,14 @@ const Header = () => {
       clearTimeout(timer);
     }
   }, [searchQuery]);
+
+  const fetchResults = () => {
+    
+    
+    return (
+      <Link to={"/watch/"+params.resID}><SearchResults/></Link>
+    ) 
+  }
   
 
   async function getSearchResults() {
@@ -38,7 +50,10 @@ const Header = () => {
           />
           <a href='/'><img alt='logo' className='h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
         </div>
-        <form className='col-span-8 relative'>
+        <form className='col-span-8 relative' value={searchQuery} onSubmit={(e) => {
+          e.preventDefault();
+          fetchResults();
+          }}>
           <input className='w-1/2 p-2 border border-black border-opacity-40 rounded-l-full border-r-0' type='text' placeholder='Search'
             onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery}
           />
