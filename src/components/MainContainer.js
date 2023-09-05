@@ -1,6 +1,4 @@
 import React from 'react'
-import SideBar from './SideBar'
-import Body from './Body'
 import ButtonList from './ButtonList'
 import VideoContainer from './VideoContainer'
 
