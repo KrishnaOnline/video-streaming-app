@@ -11,7 +11,7 @@ const Comments = ({comments}) => {
       <img className='mr-5 rounded-full' src={commenterDp} alt='' />
       <div>
         <p className='font-medium'>{commenter}</p>
-        <p className='pl-2'>{comment}</p>
+        <p className=''>{comment}</p>
       </div>
     </div>
   )
