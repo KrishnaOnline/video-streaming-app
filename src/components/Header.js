@@ -24,9 +24,16 @@ const Header = () => {
   let navigate = useNavigate();
 
   const handleSearchSubmit = (e) => {
-    e.preventDefault();
+    if(searchQuery.length === 0) {
+      return;
+    }
     navigate(`/search/${encodeURIComponent(searchQuery)}`);
     setSearchQuery("")
+  }
+
+  const handleSuggestions = (s) => {
+    setSearchQuery(s);
+    handleSearchSubmit(s);
   }
   
 
@@ -60,7 +67,7 @@ const Header = () => {
           </button>
           <ul className='absolute bg-white w-1/2 rounded-lg'>
             {
-              results.map((s) => (<li key={s} className='shadow-sm p-2'>{s}</li>))
+              results.map((s) => (<li key={s} onClick={() => handleSuggestions(s)} className='cursor-pointer hover:bg-gray-50 shadow-sm p-2'>{s}</li>))
             }
           </ul>
         </form>
