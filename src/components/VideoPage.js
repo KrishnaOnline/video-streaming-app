@@ -61,7 +61,7 @@ const VideoPage = () => {
             </button>
           </p>
           <CommentsSec/>
-          <VideoSuggestions/>
+          {/* <VideoSuggestions/> */}
         </div>
       </div>
       <div className='flex flex-col-reverse mt-6 mr-16 ml-16 border border-black rounded-lg shadow-lg h-[523px] overflow-y-scroll bg-gray-100 w-1/4 p-3'>
