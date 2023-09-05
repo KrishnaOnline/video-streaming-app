@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import { VIDEO_BY_ID_URL } from '../utils/constants';
 import LiveChat from './LiveChat';
 import CommentsSec from './CommentsSec';
-import VideoSuggestions from './VideoSuggestions';
 
 
 const VideoPage = () => {
@@ -42,6 +41,7 @@ const VideoPage = () => {
     <div className='flex flex-wrap'>
       <div className='m-6 ml-16 w-3/5'>
         <iframe className='shadow-lg rounded-lg'
+          title='VideoPlayer'
           width="930" 
           height="523" 
           src={"https://www.youtube.com/embed/"+videoID} 
