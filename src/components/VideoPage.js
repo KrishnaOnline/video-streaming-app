@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { VIDEO_BY_ID_URL } from '../utils/constants';
 import LiveChat from './LiveChat';
 import CommentsSec from './CommentsSec';
+import VideoSuggestions from './VideoSuggestions';
 
 
 const VideoPage = () => {
@@ -60,6 +61,7 @@ const VideoPage = () => {
             </button>
           </p>
           <CommentsSec/>
+          <VideoSuggestions/>
         </div>
       </div>
       <div className='flex flex-col-reverse mt-6 mr-16 ml-16 border border-black rounded-lg shadow-lg h-[523px] overflow-y-scroll bg-gray-100 w-1/4 p-3'>
