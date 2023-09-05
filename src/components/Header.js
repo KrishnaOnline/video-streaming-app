@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import { toggleMenu } from '../utils/menuSlice';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import SearchResults from './SearchResults';
-import { useHistory } from 'react-router-dom'
 
 const Header = () => {
 
