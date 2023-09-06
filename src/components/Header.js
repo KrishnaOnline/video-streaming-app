@@ -56,11 +56,11 @@ const Header = () => {
           />
           <a href='/'><img alt='logo' className='h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
         </div>
-        <form className='col-span-8 relative' value={searchQuery} onSubmit={handleSearchSubmit}>
+        <div className='col-span-8 relative' value={searchQuery} onSubmit={handleSearchSubmit}>
           <input className='w-1/2 p-2 border border-black border-opacity-40 rounded-l-full border-r-0' type='text' placeholder='Search'
             onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery}
           />
-          <button className='p-2 border border-black border-opacity-40 bg-gray-100 rounded-r-full px-4'>
+          <button onClick={handleSearchSubmit} className='p-2 border border-black border-opacity-40 bg-gray-100 rounded-r-full px-4'>
             Search
           </button>
           <ul className='absolute bg-white w-1/2 rounded-lg'>
@@ -68,7 +68,7 @@ const Header = () => {
               results.map((s) => (<li key={s} onClick={() => handleSuggestions(s)} className='cursor-pointer hover:bg-gray-50 shadow-sm p-2'>{s}</li>))
             }
           </ul>
-        </form>
+        </div>
         <div className='col-span-1'>
           <img alt='user' className='h-10' src={require('../assets/images/user-icon.png')}/>
         </div>
