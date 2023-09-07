@@ -56,7 +56,10 @@ const Header = () => {
           />
           <a href='/'><img alt='logo' className='h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
         </div>
-        <div className='col-span-8 relative' value={searchQuery} onSubmit={handleSearchSubmit}>
+        <form onSubmit={(e) => {
+          e.preventDefault()
+          handleSearchSubmit()
+        }} className='col-span-8 relative' value={searchQuery}>
           <input className='w-1/2 p-2 border border-black border-opacity-40 rounded-l-full border-r-0' type='text' placeholder='Search'
             onChange={(e) => setSearchQuery(e.target.value)} value={searchQuery}
           />
@@ -68,7 +71,7 @@ const Header = () => {
               results.map((s) => (<li key={s} onClick={() => handleSuggestions(s)} className='cursor-pointer hover:bg-gray-50 shadow-sm p-2'>{s}</li>))
             }
           </ul>
-        </div>
+        </form>
         <div className='col-span-1'>
           <img alt='user' className='h-10' src={require('../assets/images/user-icon.png')}/>
         </div>
