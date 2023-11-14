@@ -38,12 +38,10 @@ const VideoPage = () => {
   }
 
   return (
-    <div className='flex flex-wrap'>
-      <div className='m-6 ml-16 w-3/5'>
-        <iframe className='shadow-lg rounded-lg'
+    <div className='flex gap-2 mx-auto max-w-[1280px] flex-wrap'>
+      <div className='w-full lg:w-[67%] mt-9 px-2'>
+        <iframe className='shadow-lg max-md:w-full max-md:h-[350px] rounded-lg w-full h-[450px]'
           title='VideoPlayer'
-          width="930" 
-          height="523" 
           src={"https://www.youtube.com/embed/"+videoID} 
           allowFullScreen>
         </iframe>
@@ -64,7 +62,7 @@ const VideoPage = () => {
           {/* <VideoSuggestions/> */}
         </div>
       </div>
-      <div className='flex flex-col-reverse mt-6 mr-16 ml-16 border border-black rounded-lg shadow-lg h-[523px] overflow-y-scroll bg-gray-100 w-1/4 p-3'>
+      <div className='flex flex-col-reverse border border-black rounded-lg shadow-lg h-[523px] overflow-y-scroll bg-gray-100 mx-auto my-5 w-full lg:w-[30%] p-3'>
         <LiveChat/>
       </div>
     </div>

@@ -24,11 +24,13 @@ const SearchResults = () => {
   return (
     <div className='m-10 flex flex-col gap-5'>
       {
-        searchResults.map((video) => {
+        searchResults.map((video, index) => {
           return (
-            <Link to={"/watch/"+params}>
-              <SearchCard key={video?.id?.videoId} searchResults={video}/>
-            </Link>
+            <div key={index} className=''>
+              <Link to={"/watch/"+params}>
+                <SearchCard key={video?.id?.videoId} searchResults={video}/>
+              </Link>
+            </div>
           )
         })
       }

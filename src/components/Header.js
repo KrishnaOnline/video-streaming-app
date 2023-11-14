@@ -48,13 +48,14 @@ const Header = () => {
   }
 
   return (
-    <div className='sticky top-0 z-50 bg-white'>
-      <div className='grid grid-flow-col p-4 px-6 drop-shadow-lg shadow-lg'>
+    <div className='sticky max-w-[5000px] top-0 z-50 bg-white'>
+      <div className='grid grid-flow-col p-4 px-6 drop-shadow-sm shadow-lg'>
         <div className='flex gap-5 items-center col-span-3'>
           <img alt="menu" className='h-4 cursor-pointer' src={require('../assets/images/three-horizontal-lines.png')}
             onClick={() => handleSideBar()}
           />
-          <a href='/'><img alt='logo' className='h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
+          <a href='/'><img alt='logo' className='hidden md:flex h-7 cursor-pointer' src={require('../assets/images/youtube-logo.png')}/></a>
+          <a href='/'><img alt='logo' className='md:hidden h-10 -translate-x-4 cursor-pointer' src={require('../assets/images/youtube-logo-mobile.png')}/></a>
         </div>
         <form onSubmit={(e) => {
           e.preventDefault()
@@ -76,6 +77,7 @@ const Header = () => {
           <img alt='user' className='h-10' src={require('../assets/images/user-icon.png')}/>
         </div>
       </div>
+      <hr className='shadow-lg'/>
     </div>
   )
 }

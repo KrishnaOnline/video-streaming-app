@@ -18,7 +18,7 @@ const appRouter = createBrowserRouter([{
     },
     {
       path: "watch/:id",
-      element: <VideoPage/>
+      element: <div className='mx-auto'><VideoPage/></div>
     },
     {
       path: "search/:resID",
@@ -29,11 +29,14 @@ const appRouter = createBrowserRouter([{
 
 function App() {
   return (
-    <Provider store={store}>
-      <div className="App">
-        <RouterProvider router={appRouter}/>
-      </div>
-    </Provider>
+    <div>
+      {/* <Header/> */}
+      <Provider store={store}>
+        <div className="App max-w-[1280px] mx-auto">
+          <RouterProvider router={appRouter}/>
+        </div>
+      </Provider>
+    </div>
   );
 }
 

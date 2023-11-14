@@ -18,12 +18,14 @@ const VideoContainer = () => {
   }
 
   return (
-    <div className='flex flex-wrap ml-3'>
+    <div className='flex items-center max-w-[1280px] justify-center gap-2 mx-auto flex-wrap'>
       {
         videos.map((video) => {
           return  (
             <Link to={"/watch/"+video.id} key={video.id}>
-              <VideoCard key={video.id} video={video}/>
+              <div className=''>
+                <VideoCard key={video.id} video={video}/>
+              </div>
             </Link>
           ) 
         })
