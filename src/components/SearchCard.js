@@ -8,7 +8,7 @@ const SearchCard = ({searchResults}) => {
     const desc = searchResults?.snippet?.description;
     const imgUrl = searchResults?.snippet?.thumbnails?.medium?.url;
     const resultType = searchResults?.id?.kind;
-    console.log(searchResults);
+    // console.log(searchResults);
 
   return (
     <div>

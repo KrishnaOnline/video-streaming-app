@@ -18,7 +18,7 @@ const CommentsSec = () => {
         const data = await fetch(YOUTUBE_COMMENTS_API+videoID);
         const json = await data.json();
         setComments(json.items)
-        console.log(json.items);
+        // console.log(json.items);
     }
 
   return (

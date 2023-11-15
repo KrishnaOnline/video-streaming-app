@@ -8,7 +8,7 @@ const SearchResults = () => {
     const [searchResults, setSearchResults] = useState([]);
 
     const params = useParams();
-    console.log(params);
+    // console.log(params);
 
     useEffect(() => {
         getSearchResults();
@@ -17,7 +17,7 @@ const SearchResults = () => {
     async function getSearchResults() {
         const data = await fetch(SEARCH_RESULTS_API+params.resID);
         const json = await data.json();
-        console.log(json.items);
+        // console.log(json.items);
         setSearchResults(json.items);
     }
 
