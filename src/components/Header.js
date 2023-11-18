@@ -12,7 +12,7 @@ const Header = () => {
   // const params = useParams();
 
   useEffect(() => {
-    const timer = setTimeout(() => getSearchResults(), 100);
+    const timer = setTimeout(() => getSearchResults(), 1000);
 
     return () => {
       clearTimeout(timer);
