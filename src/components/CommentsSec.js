@@ -25,7 +25,7 @@ const CommentsSec = () => {
     <div className='mt-5 border shadow-md rounded-lg p-3'>
     <p className='font-bold text-2xl mb-3'>Comments :</p>
       {  
-        comments.map((comment) => {
+        comments?.map((comment) => {
           return (
             <Comments comments={comment}/>
           )
